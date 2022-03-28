@@ -8,8 +8,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Account {
-	private String ano;
-	private String owner;
+	private String ano;	
 	private int balance;
 	
 
