@@ -3,6 +3,7 @@ package io;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class FileEx3 { //프로그램에서 폴더 만들기
 	//c에 새폴더 test 만들어 놓음
@@ -43,7 +44,7 @@ public class FileEx3 { //프로그램에서 폴더 만들기
 			
 			File[] files =temp.listFiles();
 			for(File f:files) {
-				System.out.println(sdf.format(new Date(f.lastModified())));
+				System.out.println(sdf.format(new Date(f.lastModified())));//(new Date(1647483401014))
 				if(f.isDirectory()) {
 					System.out.println("\t<DIR>\t\t\t"+f.getName());
 				}else {

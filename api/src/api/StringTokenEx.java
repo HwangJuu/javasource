@@ -18,13 +18,17 @@ public class StringTokenEx {
 			System.out.println(st1.nextToken());
 		}
 		System.out.println();
-		String exp = "1,김천재,100,100,100|2,박수재,95,80,90,|3,이자바,80,90,90";
+		String exp = "1,김천재,100,100,100|2,박수재,95,80,90|3,이자바,80,90,90";
+		
 		StringTokenizer st2 = new StringTokenizer(exp,"|");
+		StringTokenizer st3 = new StringTokenizer(exp,"|,");
 		
 		while(st2.hasMoreTokens()) {
 			System.out.println(st2.nextToken());
 		}
-		
+		while(st3.hasMoreTokens()) {
+			System.out.println(st3.nextToken());
+		}
 		
 	}
 

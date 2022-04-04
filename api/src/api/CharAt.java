@@ -32,9 +32,6 @@ public class CharAt {
 		}
 		System.out.println(flag?"문자가 들어있음":"없음");
 		
-		
-		
-		
 
 	}
 

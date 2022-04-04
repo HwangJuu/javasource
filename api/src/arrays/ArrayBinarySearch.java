@@ -2,7 +2,7 @@ package arrays;
 
 import java.util.Arrays;
 
-// BinarySearch : 이진 검색
+// BinarySearch : 이진 검색(정렬 완료된 상황)
 
 public class ArrayBinarySearch {
 	public static void main(String[] args) {

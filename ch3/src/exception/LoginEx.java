@@ -2,37 +2,29 @@ package exception;
 
 public class LoginEx {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {		
 		
-		
-		
-		try {
+		try {//멀티 캐치 
 			login("white","12345");
-		} catch (NotExistIDException2 | WrongPasswordException e) {
+		} catch (NotExistIDException | WrongPasswordException e) {
 			e.printStackTrace();
 		}
 		
 		try {
 			login("blue","54321");
-		} catch (NotExistIDException2 e) {
-			e.printStackTrace();
-			
+		} catch (NotExistIDException e) {
+			e.printStackTrace();			
 		} catch(WrongPasswordException e) {
 			e.printStackTrace();
 		}
-		
-		
-		
-		
-
 	}
 	
-	public static void login(String id, String password) throws NotExistIDException2, WrongPasswordException {
+	public static void login(String id, String password) throws NotExistIDException, WrongPasswordException {
 		
 		//id가 blue가 아니라면 NotExistIDException 발생
 		//출력 : 아이디가 존재하지 않습니다.
 		if(!id.equals("blue")) {
-			throw new NotExistIDException2("아이디가 존재하지 않습니다.");
+			throw new NotExistIDException("아이디가 존재하지 않습니다.");
 		}
 		
 		//password가 12345가 아니라면 WrongPasswordException 발생

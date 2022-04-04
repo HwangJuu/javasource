@@ -10,11 +10,11 @@ public class ArraysSort3 {
 		
 		
 		//오름차순 정렬
-//		Arrays.sort(arr);
+		Arrays.sort(arr);
+		System.out.println(Arrays.toString(arr));
 		
 		//내림차순 정렬
-		Arrays.sort(arr,Comparator.reverseOrder());
-		
+		Arrays.sort(arr,Comparator.reverseOrder());		
 		System.out.println(Arrays.toString(arr));
 
 	}

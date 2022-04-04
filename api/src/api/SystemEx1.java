@@ -22,7 +22,7 @@ public class SystemEx1 {
 		}
 		long end = System.currentTimeMillis();
 		System.out.println("1~10,000,000 합 : "+sum);
-		System.out.println("1~10,000,000 합 구하는데 걸리는 시간 : "+(end-start));
+		System.out.println("1~10,000,000 합 구하는데 걸리는 시간 : "+(end-start) + "ms");
 
 	}
 
