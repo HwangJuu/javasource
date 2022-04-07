@@ -10,7 +10,7 @@ public class ListEx5 {
 		list.add(new Member("hong", "홍길동", "hong123"));
 		list.add(new Member("kang", "강길동", "kang123"));
 		list.add(new Member("park", "박길동", "park123"));
-		list.add(new Member("kim", "김길동", "kimg123"));
+		list.add(new Member("kim", "김길동", "kim123"));
 		
 		
 		System.out.println(list);
