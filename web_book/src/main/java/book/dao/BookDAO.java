@@ -10,7 +10,6 @@ import book.dto.BookDTO;
 import static book.dao.JdbcUtil.*;
 
 
-
 public class BookDAO {	
 	private Connection con;
 	public BookDAO(Connection con) {
@@ -116,9 +115,48 @@ public class BookDAO {
 		return result;
 		
 	}
+	//검색(select)
+	//select * from bootbl where code=1001
+	//select * from bootbl where writer=홍길동 : 정확히 이름을 알 때
+	//select * from bootbl where writer like '%길동%' 일부분 일치하면 
 	
-	
-	
+	public List<BookDTO> searchList(String criteria, String keyword){
+		List<BookDTO> list = new ArrayList<>();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = " ";
+		
+		try {
+			if(criteria.equals("code")) {
+				sql="select * from booktbl  where code=?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, Integer.parseInt(keyword));
+			}else {
+				sql="select * from booktbl  where writer like ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, "%"+ keyword + "%"); //%길동%' 일부분 일치
+			}
+			
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				BookDTO dto = new BookDTO();
+				dto.setCode(rs.getInt("code"));
+				dto.setTitle(rs.getString("title"));
+				dto.setWriter(rs.getString("writer"));
+				dto.setPrice(rs.getInt("price"));
+				
+				list.add(dto);				
+			}						
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		}		
+		
+		return list;
+	}
 	
 	
 	

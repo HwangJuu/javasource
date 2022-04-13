@@ -4,15 +4,15 @@
 <%@ include file = "/layout/header.jsp" %>
 <%--화면 위치 --%>
 <h1>도서 정보 검색</h1>    
-<form action="" method="post">
+<form action="searchPro.jsp" method="post">
 	<div class="form-row">
-		<div class="form-group row col-md-6">
+		<div class="form-group col-md-6">
 			<select name="criteria" id="criteria" class="form-control">
 				<option value="code">code</option>
 				<option value="writer">writer</option>
 			</select>
 		</div>	
-	<div class="form-group row col-md-6">
+	<div class="form-group col-md-6">
 		<input type="text" name="keyword" id="keyword" class="form-control"/>
 	</div>
 	</div>
