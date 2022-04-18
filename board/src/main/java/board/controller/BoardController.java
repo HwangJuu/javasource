@@ -1,4 +1,4 @@
-package item.controller;
+package board.controller;
 
 import java.io.IOException;
 
@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import item.action.Action;
-import item.action.ActionForward;
-import item.action.ItemActionFactory;
+import board.action.Action;
+import board.action.ActionForward;
+import board.action.BoardActionFactory;
 
 
 @WebServlet("*.do")
-public class ItemController extends HttpServlet {
+public class BoardController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
@@ -28,7 +28,7 @@ public class ItemController extends HttpServlet {
 		
 		
 		//Action 생성 => BookActionFactory이용
-		ItemActionFactory baf = ItemActionFactory.getInstance();
+		BoardActionFactory baf = BoardActionFactory.getInstance();
 		Action action =  baf.action(cmd);
 		
 		//생성된 action에게 요청 넘기기
