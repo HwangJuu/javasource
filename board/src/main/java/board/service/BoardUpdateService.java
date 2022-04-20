@@ -3,23 +3,25 @@ package board.service;
 import static board.dao.JdbcUtil.*;
 
 import java.sql.Connection;
-import java.util.List;
-
 import board.dao.BoardDAO;
 import board.dto.BoardDTO;
-import board.dto.SearchDTO;
 
-public class BoardListService {
-public List<BoardDTO> list(SearchDTO searchDto){
+public class BoardUpdateService {
+	public boolean update(BoardDTO updateDto) {
 		
 		Connection con = getConnection();
 		BoardDAO dao = new BoardDAO(con);
 		
-		List<BoardDTO> list = dao.listArticle(searchDto);
+		boolean flag = false;
 		
+		if(dao.updateArticle(updateDto)) {
+			commit(con);
+			flag=true;
+		}else {
+			rollback(con);
+		}
 		close(con);
 		
-		return list;
+		return flag;
 	}
-
 }

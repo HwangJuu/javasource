@@ -9,7 +9,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-//request에 upload 요청이 있는지 확인
+	//request에 upload 요청이 있는지 확인
 	boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 
 	if(isMultipart){
